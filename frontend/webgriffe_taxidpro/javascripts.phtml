@@ -75,32 +75,39 @@
         return ( s%26 == cf.charCodeAt(15)-'A'.charCodeAt(0) );
     }
 
-    function ControllaPIVA(pi)
+    function ControllaPIVA(pi, country)
     {
-        if( pi == '' )  {
-            return true;
-        }
-        if( pi.length != 11 ) {
-            return false;
-        }
-        validi = "0123456789";
-        for( i = 0; i < 11; i++ ){
-            if( validi.indexOf( pi.charAt(i) ) == -1 ) {
-                return false;
+        if(country == 'IT') {
+            patternIT = /^(IT[0-9]{11})$/g;
+            if(pi.match(patternIT) !== null) {
+
+                pi = pi.substring(2, pi.length);
+
+                if( pi.length != 11 ) {
+                    return false;
+                }
+
+                validi = "0123456789";
+                for( i = 0; i < 11; i++ ){
+                    if( validi.indexOf( pi.charAt(i) ) == -1 ) {
+                        return false;
+                    }
+                }
+                s = 0;
+                for( i = 0; i <= 9; i += 2 ) {
+                    s += pi.charCodeAt(i) - '0'.charCodeAt(0);
+                }
+                for( i = 1; i <= 9; i += 2 ) {
+                    c = 2*( pi.charCodeAt(i) - '0'.charCodeAt(0) );
+                    if( c > 9 ) {
+                        c = c - 9;
+                    }
+                    s += c;
+                }
+                return ( ( 10 - s%10 )%10 == pi.charCodeAt(10) - '0'.charCodeAt(0) );
             }
         }
-        s = 0;
-        for( i = 0; i <= 9; i += 2 ) {
-            s += pi.charCodeAt(i) - '0'.charCodeAt(0);
-        }
-        for( i = 1; i <= 9; i += 2 ) {
-            c = 2*( pi.charCodeAt(i) - '0'.charCodeAt(0) );
-            if( c > 9 ) {
-                c = c - 9;
-            }
-            s += c;
-        }
-        return ( ( 10 - s%10 )%10 == pi.charCodeAt(10) - '0'.charCodeAt(0) );
+        retunr false;
     }
 
     function <?php echo $blockAlias ?>ToggleBusinessFields(isBusinessAddressElement) {
@@ -129,11 +136,11 @@
         Validation.addAllThese([
             ['validate-tax_code', '<?php echo $editBlock->__("Please, enter a valid Tax Code.") ?>', function (v, elm) {
                 elm.value = elm.value.toUpperCase();
-                return $('<?php echo $editBlock->getCountryId() ?>').value != 'IT' || ControllaCF(elm.value) || ControllaPIVA(elm.value);
+                return $('<?php echo $editBlock->getCountryId() ?>').value != 'IT' || ControllaCF(elm.value) || ControllaPIVA(elm.value, $('<?php echo $editBlock->getCountryId() ?>').value);
             }],
             ['validate-vat_number', '<?php echo $editBlock->__("Please, enter a valid VAT Number.") ?>', function (v, elm) {
                 elm.value = elm.value.toUpperCase();
-                return $('<?php echo $editBlock->getCountryId() ?>').value != 'IT' || ControllaPIVA(elm.value);
+                return ControllaPIVA(elm.value, $('<?php echo $editBlock->getCountryId() ?>').value);
             }]
         ]);
 

@@ -30,6 +30,14 @@ class Webgriffe_TaxIdPro_Model_Attribute_Data_Vatnumber extends Mage_Eav_Model_A
         $attribute = $this->getAttribute();
         $label = $helper->__($attribute->getStoreLabel());
 
+        $prefix = substr($vatNumber, 0, 2);
+
+        if($prefix != 'IT'){
+            return $helper->__('"%s" is not valid. The control character does not match.', $label);
+        }
+
+        $vatNumber = substr($vatNumber, 2, strlen($vatNumber));
+
         if (strlen($vatNumber) != 11) {
             return $helper->__('"%s" length must be %d characters.', $label, 11);
         }

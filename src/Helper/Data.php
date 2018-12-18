@@ -4,6 +4,7 @@ class Webgriffe_TaxIdPro_Helper_Data extends Mage_Core_Helper_Abstract
 {
     const IS_TAX_CODE_REQUIRED_CONFIG_PATH = 'customer/wg_taxidpro/is_tax_code_required';
     const IS_VAT_NUMBER_REQUIRED_CONFIG_PATH = 'customer/wg_taxidpro/is_vat_number_required';
+    const IS_ELECTRONIC_INVOICE_ENABLE = 'customer/wg_taxidpro/is_electronic_invoice_enable';
 
     public function isTaxCodeRequired()
     {
@@ -13,6 +14,10 @@ class Webgriffe_TaxIdPro_Helper_Data extends Mage_Core_Helper_Abstract
     public function isVatNumberRequired()
     {
         return Mage::getStoreConfigFlag(self::IS_VAT_NUMBER_REQUIRED_CONFIG_PATH);
+    }
+    public function getIsElectronicInvoiceEnable()
+    {
+        return Mage::getStoreConfig(self::IS_ELECTRONIC_INVOICE_ENABLE);
     }
 
     /**

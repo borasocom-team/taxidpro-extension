@@ -15,6 +15,16 @@
                 <action method="setCompanyId"><value>company</value></action>
                 <action method="setCompanyName"><value>company</value></action>
 
+                <!-- input for elettronic invoice -->
+                <action method="setPecEmailAddressEmId"><value>pec_email_address-em</value></action>
+                <action method="setPecEmailAddressId"><value>pec_email_address</value></action>
+                <action method="setPecEmailAddressName"><value>pec_email_address</value></action>
+
+                <action method="setSdiCodeEmId"><value>sdi_code-em</value></action>
+                <action method="setSdiCodeId"><value>sdi_code</value></action>
+                <action method="setSdiCodeName"><value>sdi_code</value></action>
+
+
                 <block name="webgriffe_taxidpro_javascripts" type="core/template" template="webgriffe_taxidpro/javascripts.phtml"/>
             </block>
         </reference>
@@ -35,6 +45,15 @@
                 <action method="setCompanyId"><value>billing:company</value></action>
                 <action method="setCompanyName"><value>billing[company]</value></action>
 
+                <!-- input for elettronic invoice -->
+                <action method="setPecEmailAddressEmId"><value>pec_email_address-em</value></action>
+                <action method="setPecEmailAddressId"><value>pec_email_address</value></action>
+                <action method="setPecEmailAddressName"><value>pec_email_address</value></action>
+
+                <action method="setSdiCodeEmId"><value>sdi_code-em</value></action>
+                <action method="setSdiCodeId"><value>sdi_code</value></action>
+                <action method="setSdiCodeName"><value>sdi_code</value></action>
+
                 <block name="webgriffe_taxidpro_javascripts" type="core/template" template="webgriffe_taxidpro/javascripts.phtml"/>
             </block>
         </reference>
@@ -52,6 +71,15 @@
                 <action method="setIsBusinessAddressName"><value>shipping[is_business_address]</value></action>
                 <action method="setCompanyId"><value>shipping:company</value></action>
                 <action method="setCompanyName"><value>shipping[company]</value></action>
+
+                <!-- input for elettronic invoice -->
+                <action method="setPecEmailAddressEmId"><value>pec_email_address-em</value></action>
+                <action method="setPecEmailAddressId"><value>pec_email_address</value></action>
+                <action method="setPecEmailAddressName"><value>pec_email_address</value></action>
+
+                <action method="setSdiCodeEmId"><value>sdi_code-em</value></action>
+                <action method="setSdiCodeId"><value>sdi_code</value></action>
+                <action method="setSdiCodeName"><value>sdi_code</value></action>
 
                 <block name="webgriffe_taxidpro_javascripts" type="core/template" template="webgriffe_taxidpro/javascripts.phtml"/>
             </block>

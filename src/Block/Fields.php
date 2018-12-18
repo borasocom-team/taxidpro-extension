@@ -30,6 +30,19 @@ class Webgriffe_TaxIdPro_Block_Fields extends Mage_Core_Block_Template
 
     private $companyId = '';
 
+    private $pecEmailAddressEmId = '';
+
+    private $pecEmailAddressId = '';
+
+    private $pecEmailAddressName = '';
+
+    private $sdiCodeEmId = '';
+
+    private $sdiCodeId = '';
+
+    private $sdiCodeName = '';
+
+
     /**
      * @param string $companyId
      * @return $this
@@ -227,4 +240,105 @@ class Webgriffe_TaxIdPro_Block_Fields extends Mage_Core_Block_Template
     {
         return $this->vatNumberName;
     }
+
+    /*******************************
+    New fields for electronic invoice
+     *********************************/
+
+    /**
+     * @param $pecEmailAddressEmId
+     * @return $this
+     */
+    public function setPecEmailAddressEmId($pecEmailAddressEmId){
+        $this->pecEmailAddressEmId = $pecEmailAddressEmId;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPecEmailAddressEmId(){
+        return $this->pecEmailAddressEmId;
+    }
+
+    /**
+     * @param $pecEmailAddressId
+     * @return $this
+     */
+    public function setPecEmailAddressId($pecEmailAddressId){
+        $this->pecEmailAddressId = $pecEmailAddressId;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPecEmailAddressId() {
+        return $this->pecEmailAddressId;
+    }
+
+    /**
+     * @param $pecEmailAddressName
+     * @return $this
+     */
+    public function setPecEmailAddressName($pecEmailAddressName){
+        $this->pecEmailAddressName = $pecEmailAddressName;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPecEmailAddressName(){
+        return $this->pecEmailAddressName;
+    }
+
+    /**
+     * @param $sdiCodeEmId
+     * @return $this
+     */
+    public function setSdiCodeEmId($sdiCodeEmId){
+        $this->sdiCodeEmId = $sdiCodeEmId;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSdiCodeEmId() {
+        return $this->sdiCodeEmId;
+    }
+
+    /**
+     * @param $sdiCodeId
+     * @return $this
+     */
+    public function setSdiCodeId($sdiCodeId){
+        $this->sdiCodeId = $sdiCodeId;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSdiCodeId(){
+        return $this->sdiCodeId;
+    }
+
+    /**
+     * @param $sdiCodeName
+     * @return $this
+     */
+    public function setSdiCodeName($sdiCodeName){
+        $this->sdiCodeName = $sdiCodeName;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSdiCodeName(){
+        return $this->sdiCodeName;
+    }
+
 }

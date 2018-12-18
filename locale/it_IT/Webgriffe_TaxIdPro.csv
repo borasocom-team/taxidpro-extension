@@ -24,3 +24,5 @@
 "Choose if Tax Code should be required for addresses which country is Italy.","Scegliere se il Codice Fiscale deve essere obbligatorio o meno per gli indirizzi la cui nazione è Italia."
 "Is VAT Number required?","La Partita IVA è obbligatoria?"
 "Choose if VAT Number should be required for addresses which country is Italy and when the ""Is business address"" is set to ""Yes"".","Scegliere se la Partita IVA deve essere obbligatoria o meno per gli indirizzi la cui nazione è Italia e per cui ""E' un indirizzo aziendale"" è impostato su ""Sì""."
+"SDI code", "Codice destinatario"
+"Pec address", "Indirizzo PEC"

@@ -30,6 +30,16 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </is_vat_number_required>
+                        <is_electronic_invoice_enable translate="label comment">
+                            <label><![CDATA[Is electronic invoice enable?]]></label>
+                            <comment><![CDATA[Choose if you want pec and sdi code visible in frontend]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>15</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_electronic_invoice_enable>
                     </fields>
                 </wg_taxidpro>
             </groups>

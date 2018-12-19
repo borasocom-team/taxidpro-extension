@@ -31,11 +31,13 @@
                     <shipping>1</shipping>
                     <mapped>1</mapped>
                 </vat_number>
+                <!-- Pec email address -->
                 <pec_email_address>
                     <billing>1</billing>
                     <shipping>1</shipping>
                     <mapped>1</mapped>
                 </pec_email_address>
+                <!-- Sdi code  -->
                 <sdi_code>
                     <billing>1</billing>
                     <shipping>1</shipping>
